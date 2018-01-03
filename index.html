@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="main">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <!-- Angular Js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.8/angular.min.js"></script>
+    <!-- Script principal -->
+    <script src="js/index.js" charset="utf-8"></script>
+    <!-- Bootstrap Cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <!-- Controlador principal js/index.js -->
+  <body ng-controller="mainController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <label>Vendedores</label>
+          <select class="form-control" ng-model="vendedor_id">
+
+            <option ng-repeat="vendedor in vendedores">{{vendedor.DisCodigoAsesor}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label>Proveedores</label>
+          <select class="form-control" ng-model="proveedor_id">
+            <option ng-repeat="proveedor in proveedores">{{proveedor.PrvCodigo}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label>Canales</label>
+          <select class="form-control" name="">
+            <option ng-repeat="canal in canales">{{canal.DisIdCanal}}</option>
+          </select>
+        </div>
+      </div><br>
+      <button type="button" class=" btn btn-primary" name="button">Excel</button>
+    </div>
+    <br>
+
+<div class="container">
+  <!-- datos -->
+  <table class="table table-striped">
+    <tr>
+      <td>Proveedor</td>
+      <td>Total Plan</td>
+      <td>Venta real</td>
+      <td>GAP</td>
+      <td>% Cumplimiento</td>
+      <td>Venta MLI</td>
+      <td>% Crecimiento</td>
+    </tr>
+  </table>
+<!-- Paginacion -->
+  <nav aria-label="...">
+<ul class="pagination pull-right">
+  <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+  <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+  <li class=""><a href="#">2 <span class="sr-only">(current)</span></a></li>
+</ul>
+</nav>
+</div>
+
+  </body>
+</html>
